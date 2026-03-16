@@ -1,6 +1,7 @@
-name: GitHub Actions Demo
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
-on: [push]
+name: Esteira CI/CD Python baseada em GitHub Actions
+on:
+    push:
+        branches: [feature/esteira]
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
