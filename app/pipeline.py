@@ -11,8 +11,7 @@ def run_pipeline(input_file: str, output_file: str) -> None:
         raise ValueError(f"Colunas obrigatórias ausentes: {missing_columns}")
 
     if (df["amount"] < 0).any():
-        raise ValueError(
-            "Valores negativos não são permitidos na coluna amount")
+        raise ValueError("Valores negativos não são permitidos na coluna amount")
 
     summary = pd.DataFrame(
         {
@@ -25,6 +24,7 @@ def run_pipeline(input_file: str, output_file: str) -> None:
     output_path = Path(output_file)
     output_path.parent.mkdir(parents=True, exist_ok=True)
     summary.to_csv(output_path, index=False)
+
 
 def create_annual_report(input_file: str, output_file: str) -> None:
     df = pd.read_csv(input_file)
@@ -46,6 +46,7 @@ def create_annual_report(input_file: str, output_file: str) -> None:
     output_path = Path(output_file)
     output_path.parent.mkdir(parents=True, exist_ok=True)
     annual_summary.to_csv(output_path, index=False)
+
 
 if __name__ == "__main__":
     run_pipeline("data/sales.csv", "output/summary.csv")
