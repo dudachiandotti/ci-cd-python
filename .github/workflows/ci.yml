@@ -14,6 +14,6 @@ jobs:
           python -m venv venv
           source venv/bin/activate
           pip install -r requirements.txt         
-      - name: Flake8
+      - name: Mypy 
         run: |
-          flake8 app tests
+          mypy app
