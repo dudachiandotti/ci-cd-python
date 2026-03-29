@@ -59,3 +59,4 @@ def test_creates_annual_report(tmp_path):
     assert len(result) == 2
     assert result.loc[result["year"] == 2023, "total_sales"].values[0] == 300.0
     assert result.loc[result["year"] == 2024, "total_sales"].values[0] == 150.0
+    
